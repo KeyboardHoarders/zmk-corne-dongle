@@ -82,17 +82,14 @@
             bindings = <&paste>;
             key-positions = <10 36>;
         };
+
+        ctrlall {
+            bindings = <&all>;
+            key-positions = <24 13>;
+        };
     };
 
     macros {
-        copy: copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp C>;
-            label = "COPY";
-            tap-ms = <50>;
-        };
-
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -100,11 +97,39 @@
                 <&macro_press>,
                 <&kp LEFT_CONTROL>,
                 <&macro_tap>,
-                <&kp P>,
+                <&kp V>,
                 <&macro_release>,
                 <&kp LEFT_CONTROL>;
 
             label = "PASTE";
+        };
+
+        copy: copys {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "COPYS";
+        };
+
+        all: all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp A>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "ALL";
         };
     };
 
@@ -159,7 +184,7 @@
         layer_3 {
             bindings = <
 &trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &trans          &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &kp F11       &kp F12       &trans        &trans      &trans          &all    &copy   &paste  &trans  &trans       &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &bootloader  &trans
                       &trans        &trans        &trans      &trans          &trans  &trans
             >;
