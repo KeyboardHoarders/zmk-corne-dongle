@@ -52,6 +52,50 @@
             bindings = <&para>;
             key-positions = <17 18>;
         };
+
+        uparrow {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <2 36>;
+        };
+
+        downarrow {
+            bindings = <&kp DOWN>;
+            key-positions = <36 14>;
+        };
+
+        leftarrow {
+            bindings = <&kp LEFT>;
+            key-positions = <36 13>;
+        };
+
+        rightarrow {
+            bindings = <&kp RIGHT>;
+            key-positions = <36 15>;
+        };
+    };
+
+    macros {
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp C>;
+            label = "COPY";
+            tap-ms = <50>;
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp P>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "PASTE";
+        };
     };
 
     keymap {
@@ -65,10 +109,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y      &kp U        &kp I       &kp O        &kp P          &kp MINUS
-&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H      &hm LCTRL J  &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N      &kp M        &kp COMMA   &kp DOT      &kp FSLH       &kp SLASH
-                       &kp LGUI     &mo 2       &kp SPACE    &kp RET  &lt 1 TAB  &kp BSPC
+&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y      &kp U          &kp I       &kp O        &kp P          &kp MINUS
+&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H      &hm LCTRL J    &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N      &kp M          &kp COMMA   &kp DOT      &kp FSLH       &kp SLASH
+                       &kp LGUI     &mo 2       &kp SPACE    &kp RET  &lt 1 TAB  &kp RIGHT_ALT
             >;
         };
 
