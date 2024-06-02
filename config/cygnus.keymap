@@ -53,7 +53,7 @@
 
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;$
+            key-positions = <13 29>;
         };
 
         pageup {
