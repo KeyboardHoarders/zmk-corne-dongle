@@ -82,21 +82,6 @@
             bindings = <&kp RIGHT>;
             key-positions = <36 15>;
         };
-
-        copy {
-            bindings = <&copy>;
-            key-positions = <24 27>;
-        };
-
-        paste {
-            bindings = <&paste>;
-            key-positions = <10 36>;
-        };
-
-        ctrlall {
-            bindings = <&all>;
-            key-positions = <24 13>;
-        };
     };
 
     keymap {
