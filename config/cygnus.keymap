@@ -3,6 +3,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+
+#define DEF 0
+#define NAV 1
+#define SYM 2
+#define ADJ 3
+#define MOUSE 4
+
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -45,8 +53,8 @@
 
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
-        };
+            key-positions = <13 29>;$
+        };$
 
         pageup {
             bindings = <&kp PAGE_UP>;
@@ -87,7 +95,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        DEF {
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
             // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
@@ -102,7 +110,7 @@
             >;
         };
 
-        num {
+        NAV {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -117,7 +125,7 @@
             >;
         };
 
-        raise_layer {
+        SYM {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -132,11 +140,19 @@
             >;
         };
 
-        layer_3 {
+        ADJ {
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      U_MS_R
-&trans  &kp F11       &kp F12       &trans        &trans      &trans          &trans  &trans  &trans  &trans  &trans       U_MS_L
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &bootloader  U_MS_U
+&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
+&trans  &kp F11       &kp F12       &trans        &trans      &trans          &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &bootloader  &trans
+                      &trans        &trans        &trans      &trans          &trans  &trans
+            >;
+        };
+        MOUSE {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans      &trans          &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans       &trans       &trans        &trans      &trans          &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                       &trans        &trans        &trans      &trans          &trans  &trans
             >;
         };
