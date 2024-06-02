@@ -2,14 +2,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
 #define NAV 1
 #define SYM 2
 #define ADJ 3
 #define MOUSE 4
-
 
 / {
     behaviors {
@@ -40,6 +39,13 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        caps: caps {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS";
+            #binding-cells = <0>;
+            continue-list = <MINUS BACKSPACE>;
         };
     };
 
@@ -90,6 +96,11 @@
             bindings = <&kp RIGHT>;
             key-positions = <36 15>;
         };
+
+        tog4 {
+            bindings = <&tog 4>;
+            key-positions = <9 31>;
+        };
     };
 
     keymap {
@@ -103,10 +114,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y      &kp U          &kp I       &kp O        &kp P          &kp MINUS
-&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H      &hm LCTRL J    &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
-&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N      &kp M          &kp COMMA   &kp DOT      &kp FSLH       &tog MOUSE
-                       &kp LGUI     &mo SYM       &kp SPACE    &kp RET  &lt NAV TAB  &kp RIGHT_ALT
+&kp TAB    &kp Q       &kp W        &kp E       &kp R        &kp T    &kp Y        &kp U          &kp I       &kp O        &kp P          &kp MINUS
+&kp LSHFT  &hm LGUI A  &hm LSHFT S  &hm LALT D  &hm LCTRL F  &kp G    &kp H        &hm LCTRL J    &hm LALT K  &hm LSHFT L  &hm LGUI SEMI  &kp SQT
+&kp LCTRL  &kp Z       &kp X        &kp C       &kp V        &kp B    &kp N        &kp M          &kp COMMA   &kp DOT      &kp FSLH       &caps_word
+                       &kp LGUI     &mo SYM     &kp SPACE    &kp RET  &lt NAV TAB  &kp RIGHT_ALT
             >;
         };
 
@@ -118,10 +129,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1       &kp N7        &kp N8       &kp N9        &kp N5         &kp N6     &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT N5  &hm LCTRL N6  &kp PAGE_UP    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans       &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN  &trans     &trans    &trans  &trans     &trans  &trans
-                     &kp LGUI      &mo SYM        &kp SPACE     &kp RET        &lt NAV TAB  &trans
+&trans  &kp N1       &kp N7        &kp N8       &kp N9        &kp N5         &kp N6       &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT N5  &hm LCTRL N6  &kp PAGE_UP    &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans       &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN  &trans       &trans    &trans  &trans     &trans  &trans
+                     &kp LGUI      &mo SYM      &kp SPACE     &kp RET        &lt NAV TAB  &trans
             >;
         };
 
@@ -133,10 +144,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR   &kp PRCNT  &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans    &trans    &trans     &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &trans    &trans    &trans     &kp TILDE  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                  &kp LGUI  &mo SYM     &kp SPACE  &kp RET    &lt NAV TAB  &trans
+&trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR   &kp PRCNT  &kp CARET    &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
+&trans  &trans    &trans    &trans    &trans     &kp GRAVE  &kp MINUS    &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
+&trans  &trans    &trans    &trans    &trans     &kp TILDE  &kp UNDER    &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
+                  &kp LGUI  &mo SYM   &kp SPACE  &kp RET    &lt NAV TAB  &trans
             >;
         };
 
@@ -148,6 +159,7 @@
                       &trans        &trans        &trans      &trans          &trans  &trans
             >;
         };
+
         MOUSE {
             bindings = <
 &trans  &trans  U_MS_U   &trans   &trans   U_WH_U        &trans  &trans  &trans  &trans  &trans   &trans
