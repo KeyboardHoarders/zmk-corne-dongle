@@ -54,7 +54,7 @@
         escape {
             bindings = <&kp ESCAPE>;
             key-positions = <13 29>;$
-        };$
+        };
 
         pageup {
             bindings = <&kp PAGE_UP>;
