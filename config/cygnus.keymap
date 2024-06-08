@@ -129,10 +129,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1       &kp N7        &kp N8       &kp N9        &kp N5         &kp N6       &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT N5  &hm LCTRL N6  &kp PAGE_UP    &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans       &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN  &trans       &trans    &trans  &trans     &trans  &trans
-                     &kp LGUI      &mo SYM      &kp SPACE     &kp RET        &lt NAV TAB  &trans
+&trans  &kp N1       &kp N7        &kp N8       &kp N9        &kp N5         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N4        &kp N5        &trans
+&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT N5  &hm LCTRL N6  &kp PAGE_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans
+&trans  &trans       &kp N1        &kp N2       &kp N3        &kp PAGE_DOWN  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+                     &kp LGUI      &mo SYM      &kp SPACE     &kp RET        &lt NAV TAB   &trans
             >;
         };
 
