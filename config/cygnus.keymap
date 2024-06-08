@@ -97,9 +97,9 @@
             key-positions = <36 15>;
         };
 
-        tog4 {
-            bindings = <&tog 4>;
-            key-positions = <9 31>;
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <15 21>;
         };
     };
 
@@ -162,10 +162,9 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  U_MS_U   &trans   &trans   U_WH_U        &trans  &trans  &trans  &trans  &trans   &trans
-&trans  U_MS_L  U_MS_D  U_MS_R  &trans U_WH_D             &trans  &kp LEFT     &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK       &trans  &trans  &trans  &trans  &trans  &trans
-                      &trans  &trans  &trans         &trans  &trans  &trans
+&trans  &trans U_MS_U  &trans    &trans U_WH_U  &trans     &trans  &trans  &trans  &trans  &trans  &trans U_MS_L U_MS_D U_MS_R  &trans U_WH_D
+&trans  &kp LEFT       &kp DOWN  &kp UP         &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &mkp LCLK                    &mkp RCLK
+&trans  &trans         &trans    &trans         &trans     &trans  &trans  &trans  &trans  &trans  &trans                       &trans
             >;
         };
     };
