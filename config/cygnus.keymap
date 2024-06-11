@@ -102,7 +102,7 @@
             key-positions = <15 21>;
         };
     };
-
+//
     keymap {
         compatible = "zmk,keymap";
 
