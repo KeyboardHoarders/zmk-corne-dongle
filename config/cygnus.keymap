@@ -31,20 +31,29 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
 
-        backspace_del: backspace_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         caps: caps {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
             continue-list = <MINUS BACKSPACE>;
+        };
+
+        paraless: paraless {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARALESS";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        paragreat: paragreat {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PARAGREAT";
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -52,7 +61,7 @@
         compatible = "zmk,combos";
 
         backspace {
-            bindings = <&backspace_del>;
+            bindings = <&kp BACKSPACE>;
             key-positions = <19 20>;
         };
 
@@ -61,44 +70,99 @@
             key-positions = <13 29>;
         };
 
-        pageup {
-            bindings = <&kp PAGE_UP>;
-            key-positions = <5 29>;
-        };
-
-        pagedown {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <6 30>;
-        };
-
-        para {
-            bindings = <&para>;
-            key-positions = <17 18>;
-        };
-
-        uparrow {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <2 36>;
-        };
-
-        downarrow {
-            bindings = <&kp DOWN>;
-            key-positions = <36 14>;
-        };
-
-        leftarrow {
-            bindings = <&kp LEFT>;
-            key-positions = <36 13>;
-        };
-
-        rightarrow {
-            bindings = <&kp RIGHT>;
-            key-positions = <36 15>;
-        };
-
         delete {
             bindings = <&kp DELETE>;
             key-positions = <15 21>;
+        };
+
+        prntscreen {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <10 22>;
+        };
+
+        perc {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 17>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <28 16>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 16>;
+        };
+
+        pound {
+            bindings = <&kp POUND>;
+            key-positions = <3 15>;
+        };
+
+        at {
+            bindings = <&kp AT>;
+            key-positions = <2 14>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <26 14>;
+        };
+
+        copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <28 27>;
+        };
+
+        paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <26 27>;
+        };
+
+        star {
+            bindings = <&kp STAR>;
+            key-positions = <8 20>;
+        };
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <32 20>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <7 19>;
+        };
+
+        minus {
+            bindings = <&kp KP_MINUS>;
+            key-positions = <31 19>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <30 18>;
+        };
+
+        leftbrack {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <31 32>;
+        };
+
+        rightbrack {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <33 32>;
+        };
+
+        para-less {
+            bindings = <&paraless>;
+            key-positions = <20 19>;
+        };
+
+        para-great {
+            bindings = <&paragreat>;
+            key-positions = <20 21>;
         };
     };
 
