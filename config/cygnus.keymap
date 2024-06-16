@@ -160,13 +160,6 @@
             >;
         };
 
-        MOUSE {
-            bindings = <
-&trans  &trans U_MS_U  &trans    &trans U_WH_U  &trans     &trans  &trans  &trans  &trans  &trans  &trans U_MS_L U_MS_D U_MS_R  &trans U_WH_D
-&trans  &kp LEFT       &kp DOWN  &kp UP         &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &mkp LCLK                    &mkp RCLK
-&trans  &trans         &trans    &trans         &trans     &trans  &trans  &trans  &trans  &trans  &trans                       &trans
-            >;
-        };
     };
 
     conditional_layers {
