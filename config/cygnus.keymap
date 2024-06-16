@@ -224,10 +224,6 @@
                       &trans        &trans        &trans      &trans          &trans  &trans
             >;
         };
-<<<<<<< HEAD
-
-=======
->>>>>>> 57a0a300ccad04a59d41873bf058cb9c47f6869a
     };
 
     conditional_layers {
