@@ -194,10 +194,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1       &kp N7        &kp N8       &kp N9        &kp N5       &kp N6     &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT N5  &hm LCTRL N6  &kp PAGE_UP  &kp N0     &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans  &trans       &kp LEFT      &kp DOWN     &kp UP        &kp RIGHT    &trans     &kp N1  &kp N2  &kp N3  &trans  &trans
-                     &kp LGUI      &mo 2        &kp SPACE     &kp RET      &lt 1 TAB  &trans
+&trans  &kp N1       &kp N7        &kp N8             &kp N9           &kp N5         &kp N6     &kp N7  &kp N8  &kp N9  &kp N0  &trans
+&trans  &hm LGUI N0  &hm LSHFT N4  &hm LALT UP_ARROW  &hm LCTRL N6     &kp PAGE_UP    &kp N0     &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &trans       &kp LEFT      &kp DOWN           &kp RIGHT_ARROW  &kp PAGE_DOWN  &trans     &kp N1  &kp N2  &kp N3  &trans  &trans
+                     &kp LGUI      &mo 2              &kp SPACE        &kp RET        &lt 1 TAB  &trans
             >;
         };
 
@@ -209,10 +209,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp HASH  &kp DLLR   &kp PRCNT  &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans    &trans    &trans     &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &trans    &trans    &trans     &kp TILDE  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                  &kp LGUI  &mo 2     &kp SPACE  &kp RET    &lt 1 TAB  &trans
+&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT  &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
+&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
+&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE  &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
+                  &kp LGUI        &mo 2           &kp SPACE        &kp RET    &lt 1 TAB  &trans
             >;
         };
 
